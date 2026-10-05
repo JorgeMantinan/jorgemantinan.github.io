@@ -1,15 +1,2 @@
-# Dependencias de Node
-node_modules/
-
-# Logs y bases de datos
-*.log
-*.sql
-*.sqlite
-
-# Sistema operativo
-.DS_Store
-Thumbs.db
-
-# Editores
-.vscode/
-.idea/
+# Trabajos temporales del checkout de css-grid dentro de Actions
+sitio/
