@@ -1,7 +1,9 @@
 name: Sincronizar desde css-grid
 
 # Este repo es un espejo publico de la rama master de JorgeMantinan/css-grid
-# (la web ya desplegada). Se refleja cada 30 minutos o a mano.
+# (repo PRIVADO, por eso hace falta el secreto CSS_GRID_TOKEN de solo lectura).
+# Se refleja cada 30 minutos o a mano. Sin el secreto, el run termina con un
+# aviso (no con error) y no spamea la pestaña Actions.
 on:
   workflow_dispatch:
   schedule:
@@ -17,19 +19,27 @@ jobs:
       - name: Descargar este repo
         uses: actions/checkout@v4
 
+      - name: Aviso si falta el secreto CSS_GRID_TOKEN
+        if: ${{ secrets.CSS_GRID_TOKEN == '' }}
+        run: echo "::warning::Falta el secreto CSS_GRID_TOKEN (PAT de solo lectura para JorgeMantinan/css-grid). El espejo NO se sincroniza hasta que se cree."
+
       - name: Descargar css-grid (master = produccion)
+        if: ${{ secrets.CSS_GRID_TOKEN != '' }}
         uses: actions/checkout@v4
         with:
           repository: JorgeMantinan/css-grid
           ref: master
           path: sitio
+          token: ${{ secrets.CSS_GRID_TOKEN }}
 
       - name: Reflejar el sitio
+        if: ${{ secrets.CSS_GRID_TOKEN != '' }}
         run: |
           rsync -a --delete --exclude ".git" --exclude ".github" --exclude ".gitignore" sitio/ ./
           grep -qxF "sitio/" .gitignore || echo "sitio/" >> .gitignore
 
       - name: Commit y push
+        if: ${{ secrets.CSS_GRID_TOKEN != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
