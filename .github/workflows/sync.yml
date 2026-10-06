@@ -1,9 +1,11 @@
 name: Sincronizar desde css-grid
 
 # Este repo es un espejo publico de la rama master de JorgeMantinan/css-grid
-# (repo PRIVADO, por eso hace falta el secreto CSS_GRID_TOKEN de solo lectura).
-# Se refleja cada 30 minutos o a mano. Sin el secreto, el run termina con un
-# aviso (no con error) y no spamea la pestaña Actions.
+# (repo PRIVADO: hace falta el secreto CSS_GRID_TOKEN, PAT fine-grained con
+# Contents: Read-only sobre css-grid). Se refleja cada 30 minutos o a mano.
+# NOTA: el contexto "secrets" NO vale en los if de un step (dan error de
+# validacion "Unrecognized named-value" y el run ni siquiera crea jobs); por
+# eso se copia al env del job y se comprueba env.
 on:
   workflow_dispatch:
   schedule:
@@ -15,16 +17,18 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    env:
+      CSS_GRID_TOKEN: ${{ secrets.CSS_GRID_TOKEN }}
     steps:
       - name: Descargar este repo
         uses: actions/checkout@v4
 
       - name: Aviso si falta el secreto CSS_GRID_TOKEN
-        if: ${{ secrets.CSS_GRID_TOKEN == '' }}
+        if: ${{ env.CSS_GRID_TOKEN == '' }}
         run: echo "::warning::Falta el secreto CSS_GRID_TOKEN (PAT de solo lectura para JorgeMantinan/css-grid). El espejo NO se sincroniza hasta que se cree."
 
       - name: Descargar css-grid (master = produccion)
-        if: ${{ secrets.CSS_GRID_TOKEN != '' }}
+        if: ${{ env.CSS_GRID_TOKEN != '' }}
         uses: actions/checkout@v4
         with:
           repository: JorgeMantinan/css-grid
@@ -33,13 +37,13 @@ jobs:
           token: ${{ secrets.CSS_GRID_TOKEN }}
 
       - name: Reflejar el sitio
-        if: ${{ secrets.CSS_GRID_TOKEN != '' }}
+        if: ${{ env.CSS_GRID_TOKEN != '' }}
         run: |
           rsync -a --delete --exclude ".git" --exclude ".github" --exclude ".gitignore" sitio/ ./
           grep -qxF "sitio/" .gitignore || echo "sitio/" >> .gitignore
 
       - name: Commit y push
-        if: ${{ secrets.CSS_GRID_TOKEN != '' }}
+        if: ${{ env.CSS_GRID_TOKEN != '' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
