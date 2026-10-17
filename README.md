@@ -1,35 +1,42 @@
-# css-grid
+# portafolio
 
-Portafolio web personal de Jorge Mantiñán. Una sola página estática construida
+Portafolio web personal de Jorge Mantiñán, publicado en GitHub Pages en
+https://jorgemantinan.github.io/portafolio/. Una sola página estática construida
 desde cero (HTML, CSS GRID, Sass y JavaScript) como proyecto de aprendizaje de
-CSS GRID, y que hoy funciona como mi web de presentación: quién soy, proyectos,
-cursos y contacto.
+CSS GRID, y que hoy funciona como web de presentación: quién soy, proyectos,
+cursos y contacto. El repositorio se llama ahora `portafolio` (antes `css-grid`).
 
-## Secciones
+## Características
 
 - **Header** con menú responsive (hamburguesa en móvil) y fondo propio.
 - **Sobre mí**: popup con una breve presentación personal.
 - **Proyectos**: rejilla de proyectos; al pulsar "Saber más" se abre un slider
   con imágenes, flechas para navegar y panel de descripción desplegable.
-- **Cursos**: agrupados por centro de estudios.
+  Proyectos enlazados: web personal, proyectos para empresas, MantiRenfe,
+  MantiGestor, MantiTwitch y un bot de licitaciones.
+- **Cursos**: agrupados por centro de estudios, con popup de detalle.
+- **Contacto** con enlaces a GitHub y LinkedIn.
 - **Footer** con logo, redes sociales y copyright.
+- Página `cookies.html` de política de cookies y botón "volver arriba".
 
-## Tecnologías
+## Stack
 
 - HTML5 + CSS GRID (maquetación principal, sin frameworks de rejilla).
 - Sass (estilos fuente en `sass/`, compilados a `css/`).
 - Bootstrap 5.0.2 (solo utilidades y JS del bundle, descargado en `libs/`).
-- JavaScript + jQuery (menú, popup y slider de proyectos).
-- Google Fonts (Montserrat) y FontAwesome.
+- JavaScript + jQuery (menú, popups y slider de proyectos).
+- Google Fonts (Montserrat) y FontAwesome (CDN).
 
 ## Estructura
 
 ```
 index.html          Página única
+cookies.html        Política de cookies
 css/                CSS compilado (styles.css = Bootstrap, global.css = estilos propios)
-sass/               Fuentes Sass (global.scss importa header, main-content, footer, aboutme y slider-project)
-js/                 navbar.js, responsive.js, aboutme.js, slider-project.js
-img/                Imágenes del sitio
+sass/               Fuentes Sass (global.scss importa header, main-content, footer,
+                    aboutme, slider-project, cookies y popup-courses; styles.scss de Bootstrap)
+js/                 navbar.js, aboutme.js, slider-project.js, courses.js, go-top.js
+img/                Imágenes del sitio (capturas de proyectos, logos, fondos)
 libs/bootstrap-5.0.2/   Bootstrap descargado localmente
 ```
 
@@ -38,7 +45,12 @@ El resto de ficheros de `css/` (header, footer, main-content, aboutme,
 slider-project) eran compilados parciales sueltos que ya no se usan: todo su
 contenido está dentro de `global.css`.
 
-## Desarrollo local
+## Requisitos
+
+- Navegador moderno.
+- Node.js y Sass (solo si se modifican los `.scss` y hay que recompilar).
+
+## Puesta en marcha
 
 Es una web estática: basta con abrir `index.html` en el navegador (o servir la
 carpeta con cualquier servidor estático, por ejemplo `npx serve .`).
@@ -46,23 +58,22 @@ carpeta con cualquier servidor estático, por ejemplo `npx serve .`).
 Para recompilar los estilos tras modificar cualquier `.scss`:
 
 ```bash
-sass sass/styles.scss css/styles.css
-sass sass/global.scss css/global.css
+npx sass sass/global.scss css/global.css
+npx sass sass/styles.scss css/styles.css      # solo si cambia Bootstrap o .link-primary
 ```
 
-## Mantenimiento
+Nunca editar `css/*.css` a mano (salvo parches puntuales documentados en commits).
 
-Los commits hasta `f359da7` (agosto de 2021) están hechos a mano. A partir de
-ese punto el proyecto se corrige y mejora con ayuda de IA: los cambios
-generados quedan documentados en cada commit.
+## Despliegue
 
-> Nota: en GitHub la rama por defecto sigue siendo `master` (versión antigua de
-> 15 commits). La web completa vive en `develop`.
+GitHub Pages desde el repositorio `JorgeMantinan/portafolio`:
+https://jorgemantinan.github.io/portafolio/
 
-## Fuentes originales
+> Nota: en GitHub la rama por defecto puede seguir siendo `master` (versión
+> antigua). La web completa vive en `develop`.
 
-- Youtube Channel - FalconMasters => https://www.youtube.com/playlist?list=PLhSj3UTs2_yWsFd43wpLog5HUFzDgIbWj
-- Developer Mozilla => https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout
-- Css Tricks => https://css-tricks.com/snippets/css/complete-guide-grid/
-- Download Boostrap 5.0 => https://www.youtube.com/watch?v=rIEoF6B_GNY (part 3 for modify boostrap variables
-- Responsive Menu => https://www.youtube.com/watch?v=vFgtwsZVybY&t=1627s
+## Estado
+
+Proyecto original de 2021 hecho a mano; desde octubre de 2026 se corrige y
+mejora con ayuda de IA, con los cambios documentados en cada commit. En
+mantenimiento activo.
