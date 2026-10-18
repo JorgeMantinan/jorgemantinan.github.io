@@ -1,9 +1,9 @@
 ---
 name: sass-build
-description: Compilar los estilos Sass del proyecto css-grid tras editar cualquier fichero .scss. Usar SIEMPRE que se modifique sass/*.scss o se necesite regenerar css/global.css o css/styles.css.
+description: Compilar los estilos Sass del portafolio (carpeta css-grid) tras editar cualquier fichero .scss. Usar SIEMPRE que se modifique sass/*.scss o se necesite regenerar css/global.css o css/styles.css.
 ---
 
-# Compilación Sass de css-grid
+# Compilación Sass del portafolio
 
 Los `.css` de `css/` son **salida compilada**: jamás editarlos a mano.
 

@@ -1,4 +1,9 @@
-# css-grid — memoria del proyecto
+# Portafolio — memoria del proyecto
+
+> Nota: la carpeta local sigue llamándose `css-grid` (el nombre original del
+> proyecto de 2021 para aprender CSS GRID) y así aparece en las rutas y en el
+> historial de git, pero el proyecto **es el portafolio personal** de Jorge
+> Mantiñán. En GitHub el repositorio se renombró a `portafolio`.
 
 Web portafolio personal de Jorge Mantiñán. Estática (HTML + CSS GRID + Sass + jQuery),
 un solo `index.html`. Proyecto original de 2021 hecho a mano; desde el commit `d376721`
