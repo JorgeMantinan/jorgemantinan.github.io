@@ -1,6 +1,6 @@
 name: Sincronizar desde css-grid
 
-# Este repo es un espejo publico de la rama master de JorgeMantinan/css-grid
+# Este repo es un espejo publico de la rama master de JorgeMantinan/portafolio
 # (repo PRIVADO: hace falta el secreto CSS_GRID_TOKEN, PAT fine-grained con
 # Contents: Read-only sobre css-grid). Se refleja cada 30 minutos o a mano.
 # NOTA: el contexto "secrets" NO vale en los if de un step (dan error de
@@ -25,13 +25,13 @@ jobs:
 
       - name: Aviso si falta el secreto CSS_GRID_TOKEN
         if: ${{ env.CSS_GRID_TOKEN == '' }}
-        run: echo "::warning::Falta el secreto CSS_GRID_TOKEN (PAT de solo lectura para JorgeMantinan/css-grid). El espejo NO se sincroniza hasta que se cree."
+        run: echo "::warning::Falta el secreto CSS_GRID_TOKEN (PAT de solo lectura para JorgeMantinan/portafolio). El espejo NO se sincroniza hasta que se cree."
 
-      - name: Descargar css-grid (master = produccion)
+      - name: Descargar portafolio (master = produccion)
         if: ${{ env.CSS_GRID_TOKEN != '' }}
         uses: actions/checkout@v4
         with:
-          repository: JorgeMantinan/css-grid
+          repository: JorgeMantinan/portafolio
           ref: master
           path: sitio
           token: ${{ secrets.CSS_GRID_TOKEN }}
@@ -51,6 +51,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sin cambios: el espejo ya esta al dia"
           else
-            git commit -m "sync: css-grid@$(git -C sitio rev-parse --short HEAD)"
+            git commit -m "sync: portafolio@$(git -C sitio rev-parse --short HEAD)"
             git push
           fi
