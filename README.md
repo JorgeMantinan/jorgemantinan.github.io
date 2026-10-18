@@ -1,13 +1,14 @@
 # Portafolio
 
-Portafolio web personal de **Jorge Mantiñán**: una sola página estática
+Portafolio web personal de **Jorge Mantiñán**, publicado en GitHub Pages en
+<https://jorgemantinan.github.io/portafolio/>. Una sola página estática
 (HTML + CSS GRID + Sass + jQuery) que funciona como mi web de presentación —
 quién soy, proyectos, cursos y contacto.
 
 > El proyecto empezó en 2021 como ejercicio para aprender CSS GRID (de ahí que
 > la carpeta local y el historial de git conserven el nombre `css-grid`) y con
-> el tiempo se convirtió en mi portafolio. El repositorio en GitHub pasó a
-> llamarse `portafolio`.
+> el tiempo se convirtió en mi portafolio. El repositorio se llama ahora
+> `portafolio` (antes `css-grid`).
 
 ## Secciones
 
@@ -17,17 +18,19 @@ quién soy, proyectos, cursos y contacto.
 - **Proyectos**: tarjetas con tecnologías y fondo propio; al pulsar se abre un
   slider con las vistas del proyecto (imágenes, flechas, enlace "Ver web" y
   descripción desplegable). El clic fuera del popup también lo cierra.
+  Proyectos enlazados: web personal, proyectos para empresas, MantiRenfe,
+  MantiGestor, MantiTwitch y un bot de licitaciones.
 - **Cursos**: bloques temáticos; cada píldora abre un popup con su detalle
   (incluye formación, idiomas y experiencias extra).
 - **Contacto** y **aviso de cookies** (`cookies.html`).
 
-## Tecnologías
+## Stack
 
 - HTML5 + CSS GRID (maquetación principal, sin frameworks de rejilla).
 - Sass (fuentes en `sass/`, compiladas a `css/`).
 - Bootstrap 5.0.2 (solo utilidades, descargado en `libs/`).
 - JavaScript + jQuery (menú, popups, slider).
-- Google Fonts (Montserrat) y FontAwesome.
+- Google Fonts (Montserrat) y FontAwesome (CDN).
 
 ## Estructura
 
@@ -60,8 +63,7 @@ npx sass sass/styles.scss css/styles.css
 ## Publicación
 
 - `master` = producción (lo publicado). `develop` = taller de trabajo.
-- GitHub Pages despliega `master` → <https://jorgemantinan.github.io/css-grid/>
-  (la URL cambiará si se renombra el repositorio).
+- GitHub Pages despliega `master` → <https://jorgemantinan.github.io/portafolio/>.
 - El repositorio espejo `jorgemantinan.github.io` publica la web en la **raíz**
   → <https://jorgemantinan.github.io/> y se sincroniza solo cada 30 minutos
   desde `master` (workflow `sync.yml`).
