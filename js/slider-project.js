@@ -119,6 +119,13 @@ $(".close-project").on("click", function () {
     $(".slidershow-project").removeClass("active");
 });
 
+/* Click outside the popup (on the dimmed backdrop) also closes it */
+$(".slidershow-project").on("click", function (e) {
+    if ($(e.target).closest(".slider-project, .slider-actions").length === 0) {
+        $(".slidershow-project").removeClass("active");
+    }
+});
+
 /* Arrows change photo project */
 $(".arrow-right").on("click", function () {
     arrowChangeImg("right");

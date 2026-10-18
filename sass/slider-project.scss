@@ -121,4 +121,17 @@ $font-size: 16px;
   display: flex;
   justify-content: center;
   gap: 20px;
+  /* Sobre el fondo atenuado los botones finos se perdian: marco grueso,
+     tipografia con peso y fondo oscuro para que resalten */
+  .but-info {
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    border-width: 2px;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  .but-info:hover,
+  .but-info:active,
+  .but-info:focus {
+    border: 2px solid $fifth-color;
+  }
 }

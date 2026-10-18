@@ -291,14 +291,14 @@ ul.show {
   list-style: none;
 }
 .project .project-content ul.project-tech li {
-  margin-right: 14px;
-  font-size: calc(8px + 0.5vw);
+  margin-right: 10px;
+  font-size: calc(6px + 0.4vw);
   font-weight: 300;
   color: rgba(255, 240, 240, 0.7);
 }
 .project .project-content ul.project-tech li::after {
   content: "·";
-  margin-left: 14px;
+  margin-left: 10px;
   color: #db0700;
 }
 .project .project-content ul.project-tech li:last-child::after {
@@ -534,6 +534,9 @@ ul.show {
     height: auto;
     top: 0;
     bottom: 0;
+    /* Screenshots 16:10 en una tarjeta estrecha: ancla arriba para que
+       se vea el encabezado de la web, no un recorte del medio */
+    background-position: center top;
   }
   .project .project-content {
     padding: 20px 20px;
@@ -544,6 +547,24 @@ ul.show {
   }
   .project .project-content ul.project-tech {
     display: flex;
+  }
+  .project .project-content ul.project-tech li {
+    /* En móvil el base calc(6px + 0.4vw) queda diminuto, pero sin
+       pasarse: con 8 tecnologías no debe comerse la tarjeta */
+    font-size: calc(8px + 1.2vw);
+  }
+  /* "Proyectos para empresas" lleva 8 tecnologías: fuente más apretada
+     para que la lista no invada la tarjeta */
+  .project-empresas .project-content ul.project-tech li {
+    font-size: calc(7px + 1vw);
+  }
+  /* Las capturas de Renfe/Gestor/Twitch son interfaces claras: al 40% de
+     brillo en móvil quedaban grises planos y el título no resaltaba.
+     Misma especificidad que la regla de escritorio para que gane el orden */
+  .project.project-renfe:before,
+  .project.project-gestor:before,
+  .project.project-twitch:before {
+    filter: brightness(30%);
   }
 }
 /* Ipad Screen */
@@ -802,6 +823,19 @@ hr {
   display: flex;
   justify-content: center;
   gap: 20px;
+  /* Sobre el fondo atenuado los botones finos se perdian: marco grueso,
+     tipografia con peso y fondo oscuro para que resalten */
+}
+.slider-actions .but-info {
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  border-width: 2px;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.slider-actions .but-info:hover,
+.slider-actions .but-info:active,
+.slider-actions .but-info:focus {
+  border: 2px solid #fff0f0;
 }
 
 /* Palette */
