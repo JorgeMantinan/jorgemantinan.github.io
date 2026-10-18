@@ -131,13 +131,13 @@ $text: #fff0f0;
                 padding: 0;
                 list-style: none;
                 li {
-                    margin-right: 14px;
-                    font-size: calc(8px + 0.5vw);
+                    margin-right: 10px;
+                    font-size: calc(6px + 0.4vw);
                     font-weight: 300;
                     color: rgba(255, 240, 240, 0.7);
                     &::after {
                         content: "·";
-                        margin-left: 14px;
+                        margin-left: 10px;
                         color: $secondary-color;
                     }
                     &:last-child::after {
@@ -394,6 +394,9 @@ $text: #fff0f0;
             height: auto;
             top: 0;
             bottom: 0;
+            /* Screenshots 16:10 en una tarjeta estrecha: ancla arriba para que
+               se vea el encabezado de la web, no un recorte del medio */
+            background-position: center top;
         }
         .project-content {
             padding: 20px 20px;
@@ -407,6 +410,26 @@ $text: #fff0f0;
 
     .project .project-content ul.project-tech {
         display: flex;
+        li {
+            /* En móvil el base calc(6px + 0.4vw) queda diminuto, pero sin
+               pasarse: con 8 tecnologías no debe comerse la tarjeta */
+            font-size: calc(8px + 1.2vw);
+        }
+    }
+
+    /* "Proyectos para empresas" lleva 8 tecnologías: fuente más apretada
+       para que la lista no invada la tarjeta */
+    .project-empresas .project-content ul.project-tech li {
+        font-size: calc(7px + 1vw);
+    }
+
+    /* Las capturas de Renfe/Gestor/Twitch son interfaces claras: al 40% de
+       brillo en móvil quedaban grises planos y el título no resaltaba.
+       Misma especificidad que la regla de escritorio para que gane el orden */
+    .project.project-renfe:before,
+    .project.project-gestor:before,
+    .project.project-twitch:before {
+        filter: brightness(30%);
     }
 
 }

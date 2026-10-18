@@ -1,63 +1,79 @@
-# css-grid
+# Portafolio
 
-Portafolio web personal de Jorge Mantiñán. Una sola página estática construida
-desde cero (HTML, CSS GRID, Sass y JavaScript) como proyecto de aprendizaje de
-CSS GRID, y que hoy funciona como mi web de presentación: quién soy, proyectos,
-cursos y contacto.
+Portafolio web personal de **Jorge Mantiñán**, publicado en GitHub Pages en
+<https://jorgemantinan.github.io/portafolio/>. Una sola página estática
+(HTML + CSS GRID + Sass + jQuery) que funciona como mi web de presentación —
+quién soy, proyectos, cursos y contacto.
+
+> El proyecto empezó en 2021 como ejercicio para aprender CSS GRID (de ahí que
+> la carpeta local y el historial de git conserven el nombre `css-grid`) y con
+> el tiempo se convirtió en mi portafolio. El repositorio se llama ahora
+> `portafolio` (antes `css-grid`).
 
 ## Secciones
 
-- **Header** con menú responsive (hamburguesa en móvil) y fondo propio.
+- **Header** con menú responsive (hamburguesa en móvil), redes sociales y
+  botón para volver arriba.
 - **Sobre mí**: popup con una breve presentación personal.
-- **Proyectos**: rejilla de proyectos; al pulsar "Saber más" se abre un slider
-  con imágenes, flechas para navegar y panel de descripción desplegable.
-- **Cursos**: agrupados por centro de estudios.
-- **Footer** con logo, redes sociales y copyright.
+- **Proyectos**: tarjetas con tecnologías y fondo propio; al pulsar se abre un
+  slider con las vistas del proyecto (imágenes, flechas, enlace "Ver web" y
+  descripción desplegable). El clic fuera del popup también lo cierra.
+  Proyectos enlazados: web personal, proyectos para empresas, MantiRenfe,
+  MantiGestor, MantiTwitch y un bot de licitaciones.
+- **Cursos**: bloques temáticos; cada píldora abre un popup con su detalle
+  (incluye formación, idiomas y experiencias extra).
+- **Contacto** y **aviso de cookies** (`cookies.html`).
 
-## Tecnologías
+## Stack
 
 - HTML5 + CSS GRID (maquetación principal, sin frameworks de rejilla).
-- Sass (estilos fuente en `sass/`, compilados a `css/`).
-- Bootstrap 5.0.2 (solo utilidades y JS del bundle, descargado en `libs/`).
-- JavaScript + jQuery (menú, popup y slider de proyectos).
-- Google Fonts (Montserrat) y FontAwesome.
+- Sass (fuentes en `sass/`, compiladas a `css/`).
+- Bootstrap 5.0.2 (solo utilidades, descargado en `libs/`).
+- JavaScript + jQuery (menú, popups, slider).
+- Google Fonts (Montserrat) y FontAwesome (CDN).
 
 ## Estructura
 
 ```
-index.html          Página única
-css/                CSS compilado (styles.css = Bootstrap, global.css = estilos propios)
-sass/               Fuentes Sass (global.scss importa header, main-content, footer, aboutme y slider-project)
-js/                 navbar.js, responsive.js, aboutme.js, slider-project.js
-img/                Imágenes del sitio
+index.html              Página única
+cookies.html            Aviso de cookies
+css/                    CSS compilado (styles.css = Bootstrap, global.css = estilos propios)
+sass/                   Fuentes Sass (global.scss importa header, main-content, footer,
+                        aboutme, slider-project, cookies y popup-courses)
+js/                     navbar.js, aboutme.js, slider-project.js, courses.js, go-top.js
+img/                    Imágenes y capturas de los proyectos
 libs/bootstrap-5.0.2/   Bootstrap descargado localmente
 ```
 
-`index.html` solo carga dos hojas de estilo: `css/styles.css` y `css/global.css`.
-El resto de ficheros de `css/` (header, footer, main-content, aboutme,
-slider-project) eran compilados parciales sueltos que ya no se usan: todo su
-contenido está dentro de `global.css`.
+`index.html` solo carga `css/styles.css` y `css/global.css`; todo lo propio
+está en `global.css` (nunca se edita a mano: se recompila desde Sass).
 
 ## Desarrollo local
 
-Es una web estática: basta con abrir `index.html` en el navegador (o servir la
-carpeta con cualquier servidor estático, por ejemplo `npx serve .`).
+Web estática: abre `index.html` en el navegador (o sirve la carpeta con
+`npx serve .`).
 
-Para recompilar los estilos tras modificar cualquier `.scss`:
+Tras modificar cualquier `.scss`:
 
 ```bash
-sass sass/styles.scss css/styles.css
-sass sass/global.scss css/global.css
+npx sass sass/global.scss css/global.css
+npx sass sass/styles.scss css/styles.css
 ```
+
+## Publicación
+
+- `master` = producción (lo publicado). `develop` = taller de trabajo.
+- GitHub Pages despliega `master` → <https://jorgemantinan.github.io/portafolio/>.
+- El repositorio espejo `jorgemantinan.github.io` publica la web en la **raíz**
+  → <https://jorgemantinan.github.io/> y se sincroniza solo cada 30 minutos
+  desde `master` (workflow `sync.yml`).
 
 ## Mantenimiento
 
-Los commits hasta `f359da7` (agosto de 2021) están hechos a mano. A partir de
-ese punto el proyecto se corrige y mejora con ayuda de IA: los cambios
-generados quedan documentados en cada commit.
-
-> Nota: en GitHub la rama por defecto sigue siendo `master` (versión antigua de
-> 15 commits). La web completa vive en `develop`.
+Los commits hasta `f359da7` (agosto de 2021) están hechos a mano; desde
+entonces el proyecto se corrige y mejora con ayuda de IA, y cada cambio queda
+documentado en su commit. La memoria del proyecto para los agentes está en
+`AGENTS.md`.
 
 ## Fuentes originales
 
