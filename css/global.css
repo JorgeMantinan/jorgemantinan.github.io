@@ -320,6 +320,13 @@ ul.show {
   z-index: 5;
   transition: 1.2s;
 }
+.technologies h3 {
+  /* El bloque h3+ul llegaba a medir 243px dentro de un circulo de 250:
+     en ventanas altas el texto se salia del fondo oscuro y parecia
+     cortado. Escalado mas compacto con holgura en cualquier altura. */
+  margin-bottom: 6px;
+  font-size: calc(11px + 0.6vh);
+}
 .technologies:before {
   position: absolute;
   content: "";
@@ -344,7 +351,8 @@ ul.show {
 }
 .technologies ul {
   display: none;
-  font-size: calc(6px + 1.2vh);
+  font-size: calc(5px + 0.9vh);
+  line-height: 1.35;
   list-style: none;
   padding-left: 0;
   text-align: center;
