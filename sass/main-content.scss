@@ -436,8 +436,28 @@ $text: #fff0f0;
        Misma especificidad que la regla de escritorio para que gane el orden */
     .project.project-renfe:before,
     .project.project-gestor:before,
-    .project.project-twitch:before {
+    .project.project-twitch:before,
+    .project.project-bot:before {
         filter: brightness(30%);
+    }
+
+    /* En móvil cada tarjeta enseña la web en versión móvil (captura 390x844)
+       en lugar de un recorte de la captura de escritorio. "Proyectos para
+       empresas" conserva su foto, que es ajena a la resolución. */
+    .project.project-personal:before {
+        background-image: url("../img/movil-personal.png");
+    }
+    .project.project-renfe:before {
+        background-image: url("../img/movil-renfe.png");
+    }
+    .project.project-gestor:before {
+        background-image: url("../img/movil-gestor.png");
+    }
+    .project.project-twitch:before {
+        background-image: url("../img/movil-twitch.png");
+    }
+    .project.project-bot:before {
+        background-image: url("../img/movil-bot.png");
     }
 
 }
