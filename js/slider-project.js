@@ -40,7 +40,7 @@ let project = [
             "Quería continuar aprendiendo más acerca de fullstack y empecé a trabajar en Atos " +
             "como desarrollador fullstack usando Java Spring Boot + Angular + MySQL, " +
             "realizando múltiples implementaciones, entre ellas gestión de usuarios con OAuth2, " +
-            "control de excepciones y generación automatizada de PDFs, etc. " +
+            "control de excepciones, generación automatizada de PDFs, etc. " +
             "Más tarde me contrató Minsait, donde trabajé con PHP en la web existente a la par " +
             "que construía otros servicios en Angular y Node.js, usando y creando funcionalidades " +
             "también con PostgreSQL para nutrir a ambas aplicaciones. " +
@@ -51,9 +51,20 @@ let project = [
     {
         img: projectImgs[2],
         title: "MantiRenfe",
-        description: "Vigila las plazas libres de tus trenes y te avisa en cuanto se libera una, " +
-            "con mapa en tiempo real, cuenta atrás a tu salida y avisos según tu bono. " +
-            "Instalable como app en Android e iPhone (PWA).",
+        description: "Vigila las plazas libres de tus trenes y te avisa en cuanto se libera una: " +
+            "mapa en tiempo real, cuenta atrás a tu salida y avisos según tu bono. " +
+            "Instalable como app en Android e iPhone (PWA).<br><br>" +
+            "Hecho con React + TypeScript (Vite, Tailwind y mapa Leaflet) en el frontend, " +
+            "NestJS con Prisma y PostgreSQL en la API, colas BullMQ sobre Redis y un worker " +
+            "que sondea los feeds oficiales de Renfe (GTFS y GTFS-RT), autenticación con " +
+            "Supabase, notificaciones push y app móvil en Expo/React Native.<br><br>" +
+            "Queriendo practicar a programar con IA, un mes antes del accidente de Urda y " +
+            "volviendo de un viaje con mi hermano en el coche, me comentó que su pareja no " +
+            "encontraba la forma de que Renfe le avisase cuando liberaba una plaza. " +
+            "Al día siguiente me puse a realizar este proyecto y le sirvió.<br><br>" +
+            "Actualmente tarda en iniciar el servidor backend donde está desplegado porque " +
+            "no estoy obteniendo ingresos para mantenerlo 24/7 levantado, pero está " +
+            "completamente funcional.",
         url: "https://mantirenfe.vercel.app"
     },
     {
