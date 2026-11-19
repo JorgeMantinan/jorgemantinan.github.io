@@ -74,6 +74,15 @@ $font-size: 16px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0 0 1.5rem 1.5rem;
   transition: 1s;
+  p a {
+    color: $fifth-color;
+    text-decoration: underline;
+    transition: color .5s;
+    &:hover,
+    &:focus {
+      color: $secondary-color;
+    }
+  }
 }
 
 //TODO Refactor

@@ -805,6 +805,14 @@ hr {
   border-radius: 0 0 1.5rem 1.5rem;
   transition: 1s;
 }
+.project-info p a {
+  color: #fff0f0;
+  text-decoration: underline;
+  transition: color 0.5s;
+}
+.project-info p a:hover, .project-info p a:focus {
+  color: #db0700;
+}
 
 /* Hide project info slider */
 .hide {

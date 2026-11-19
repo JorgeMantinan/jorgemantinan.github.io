@@ -34,17 +34,18 @@ let project = [
     {
         img: projectImgs[1],
         title: "Proyectos para empresas",
-        description: "Realicé las prácticas de formación trabajando para una pyme, donde me formaron " +
-            "y trabajé activamente en implementaciones de automatización de pruebas Java con " +
-            "las librerías JUnit, Mockito y Selenium. " +
+        description: "Realicé las prácticas de formación trabajando para una pyme llamada aCore, donde " +
+            "me formaron y trabajé activamente en implementaciones de automatización de pruebas " +
+            "Java con las librerías JUnit, Mockito y Selenium. " +
             "Quería continuar aprendiendo más acerca de fullstack y empecé a trabajar en Atos " +
-            "como desarrollador fullstack usando Java Spring Boot + AngularJS + MySQL, " +
+            "como desarrollador fullstack usando Java Spring Boot + Angular + MySQL, " +
             "realizando múltiples implementaciones, entre ellas gestión de usuarios con OAuth2, " +
             "control de excepciones y generación automatizada de PDFs, etc. " +
             "Más tarde me contrató Minsait, donde trabajé con PHP en la web existente a la par " +
             "que construía otros servicios en Angular y Node.js, usando y creando funcionalidades " +
             "también con PostgreSQL para nutrir a ambas aplicaciones. " +
-            "Más información en mi perfil de LinkedIn.",
+            'Más información en <a href="https://www.linkedin.com/in/jorge-manti%C3%B1%C3%A1n-montero/" ' +
+            'target="_blank" rel="noopener noreferrer">mi perfil de LinkedIn</a>.',
         url: ""
     },
     {
@@ -97,7 +98,7 @@ $(".project").on("click", function () {
     countImgs = countImgsProject();
 
     $("#title-project").text(project[indexProject].title);
-    $("#description-project").text(project[indexProject].description);
+    $("#description-project").html(project[indexProject].description);
 
     indexImg = 0;
     $("#img-slider").attr('src', project[indexProject].img[indexImg]);
