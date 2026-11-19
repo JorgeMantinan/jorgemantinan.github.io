@@ -34,13 +34,17 @@ let project = [
     {
         img: projectImgs[1],
         title: "Proyectos para empresas",
-        description: "Resumen de mi carrera: empecé en aCore automatizando pruebas Java (JUnit, Mockito, " +
-            "Selenium), seguí en Atos con desarrollo fullstack Java SpringBoot + Angular (roles OAuth2, " +
-            "gestión de excepciones) y de 2021 a 2023 en Minsait: 14 meses de Scriptcase (PHP y " +
-            "JavaScript), fullstack NodeJS + Angular, PostgreSQL, captura de imágenes con " +
-            "geolocalización, edición masiva de millones de datos y reporting en Excel, además de " +
-            "backend NodeJS con Ionic. Ahora sigo formándome y trabajando por cuenta propia en " +
-            "proyectos propios.",
+        description: "Realicé las prácticas de formación trabajando para una pyme, donde me formaron " +
+            "y trabajé activamente en implementaciones de automatización de pruebas Java con " +
+            "las librerías JUnit, Mockito y Selenium. " +
+            "Quería continuar aprendiendo más acerca de fullstack y empecé a trabajar en Atos " +
+            "como desarrollador fullstack usando Java Spring Boot + AngularJS + MySQL, " +
+            "realizando múltiples implementaciones, entre ellas gestión de usuarios con OAuth2, " +
+            "control de excepciones y generación automatizada de PDFs, etc. " +
+            "Más tarde me contrató Minsait, donde trabajé con PHP en la web existente a la par " +
+            "que construía otros servicios en Angular y Node.js, usando y creando funcionalidades " +
+            "también con PostgreSQL para nutrir a ambas aplicaciones. " +
+            "Más información en mi perfil de LinkedIn.",
         url: ""
     },
     {
