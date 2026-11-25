@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" data-i18n-doc="doc.index">
 
 <head>
     <meta charset="utf-8">
@@ -32,9 +32,12 @@
             <nav class="menu">
                 <div class="logo"><img src="./img/MantiLogoWhite.png" alt="Manti-Logo" class="img-fluid"></div>
                 <ul class="menu_links">
-                    <li><a href="#main-content" class="link-primary">PORTAFOLIO</a></li>
-                    <li><a href="#cursos" class="link-primary">CURSOS</a></li>
-                    <li><a href="#contacto" class="link-primary">CONTACTO</a></li>
+                    <li><a href="#main-content" class="link-primary" data-i18n="nav.portfolio">PORTAFOLIO</a></li>
+                    <li><a href="#cursos" class="link-primary" data-i18n="nav.courses">CURSOS</a></li>
+                    <li><a href="#contacto" class="link-primary" data-i18n="nav.contact">CONTACTO</a></li>
+                    <li class="lang-item">
+                        <button id="lang-toggle" type="button" class="but-info">EN</button>
+                    </li>
                 </ul>
                 <span class="btn_menu">
                     <i class="fas fa-bars"></i>
@@ -44,36 +47,32 @@
             <div class="main-header">
                 <div class="personal-information">
                     <h1>Jorge Mantiñán</h1>
-                    <h3>Desarrollador FullStack</h3>
+                    <h3 data-i18n="hero.role">Desarrollador FullStack</h3>
 
                     <div class="popup-aboutme-overlay">
                         <div class="popup-aboutme">
                             <div class="popup-aboutme-content">
                                 <div class="project-description">
-                                    <p>Soy un desarrollador FullStack que hace proyectos para mejorar.
-                                        <br>Dame un café y trabajaré programando lo que
-                                        quieras.
-                                        <br> Nos vemos ❤️
-                                    </p>
+                                    <p data-i18n-html="about.text"></p>
                                 </div>
-                                <button class="close but-info">Volver</button>
+                                <button class="close but-info" data-i18n="common.back">Volver</button>
                             </div>
                         </div>
                     </div>
-                    <button id="aboutme" type="button" class="open but-info">Sobre mí</button>
+                    <button id="aboutme" type="button" class="open but-info" data-i18n="about.open">Sobre mí</button>
                 </div>
                 <div class="logo-m"><img src="./img/LogoMWhite.png" alt="small-logo-manti"></div>
                 <nav class="rrss">
                     <div><a href="https://github.com/JorgeMantinan" target="_blank" rel="noopener noreferrer"
-                            aria-label="GitHub de Jorge Mantiñán"><i class="fab fa-github"></i></a></div>
+                            aria-label="GitHub de Jorge Mantiñán" data-i18n-aria="aria.github"><i class="fab fa-github"></i></a></div>
                     <div><a href="https://www.linkedin.com/in/jorge-manti%C3%B1%C3%A1n-montero/" target="_blank"
-                            rel="noopener noreferrer" aria-label="LinkedIn de Jorge Mantiñán"><i
+                            rel="noopener noreferrer" aria-label="LinkedIn de Jorge Mantiñán" data-i18n-aria="aria.linkedin"><i
                                 class="fab fa-linkedin-in"></i></a></div>
                 </nav>
             </div>
 
             <div class="end-header">
-                <div class="go-projects-label">
+                <div class="go-projects-label" data-i18n="end.projects">
                     Proyectos
                 </div>
                 <div class="cookies-text">
@@ -87,8 +86,8 @@
             <section class="projects" id="proyectos">
                 <div class="project project-personal" data-project="0">
                     <div class="project-content">
-                        <h1>Web Personal</h1>
-                        <h3>Frontend Developer</h3>
+                        <h1 data-i18n="proj.personal">Web Personal</h1>
+                        <h3 data-i18n="role.frontend">Frontend Developer</h3>
                         <ul class="project-tech">
                             <li>HTML5</li>
                             <li>CSS GRID</li>
@@ -100,7 +99,7 @@
                     </div>
                 </div>
                 <div class="technologies">
-                    <h3>Tecnologías</h3>
+                    <h3 data-i18n="common.technologies">Tecnologías</h3>
                     <ul class="list-technologies">
                         <li>HTML5</li>
                         <li>CSS GRID</li>
@@ -111,7 +110,7 @@
                     </ul>
                 </div>
                 <div class="technologies">
-                    <h3>Tecnologías</h3>
+                    <h3 data-i18n="common.technologies">Tecnologías</h3>
                     <ul class="list-technologies">
                         <li>Java</li>
                         <li>Spring Boot</li>
@@ -125,8 +124,8 @@
                 </div>
                 <div class="project project-empresas" data-project="1">
                     <div class="project-content">
-                        <h1>Proyectos para empresas</h1>
-                        <h3>FullStack Developer</h3>
+                        <h1 data-i18n="proj.companies">Proyectos para empresas</h1>
+                        <h3 data-i18n="role.fullstack">FullStack Developer</h3>
                         <ul class="project-tech">
                             <li>Java</li>
                             <li>Spring Boot</li>
@@ -142,7 +141,7 @@
                 <div class="project project-renfe" data-project="2">
                     <div class="project-content">
                         <h1>MantiRenfe</h1>
-                        <h3>Aplicación web (PWA)</h3>
+                        <h3 data-i18n="proj.webappPwa">Aplicación web (PWA)</h3>
                         <ul class="project-tech">
                             <li>Vite</li>
                             <li>JavaScript</li>
@@ -151,7 +150,7 @@
                     </div>
                 </div>
                 <div class="technologies">
-                    <h3>Tecnologías</h3>
+                    <h3 data-i18n="common.technologies">Tecnologías</h3>
                     <ul class="list-technologies">
                         <li>Vite</li>
                         <li>JavaScript</li>
@@ -159,28 +158,28 @@
                     </ul>
                 </div>
                 <div class="technologies">
-                    <h3>Tecnologías</h3>
+                    <h3 data-i18n="common.technologies">Tecnologías</h3>
                     <ul class="list-technologies">
                         <li>Next.js</li>
                         <li>React</li>
-                        <li>IA</li>
+                        <li data-i18n="tech.ai">IA</li>
                     </ul>
                 </div>
                 <div class="project project-gestor" data-project="3">
                     <div class="project-content">
                         <h1>MantiGestor</h1>
-                        <h3>Aplicación web con IA</h3>
+                        <h3 data-i18n="proj.webappAi">Aplicación web con IA</h3>
                         <ul class="project-tech">
                             <li>Next.js</li>
                             <li>React</li>
-                            <li>IA</li>
+                            <li data-i18n="tech.ai">IA</li>
                         </ul>
                     </div>
                 </div>
                 <div class="project project-twitch" data-project="4">
                     <div class="project-content">
                         <h1>MantiTwitch</h1>
-                        <h3>Plataforma web</h3>
+                        <h3 data-i18n="proj.platform">Plataforma web</h3>
                         <ul class="project-tech">
                             <li>Expo</li>
                             <li>React Native</li>
@@ -189,7 +188,7 @@
                     </div>
                 </div>
                 <div class="technologies">
-                    <h3>Tecnologías</h3>
+                    <h3 data-i18n="common.technologies">Tecnologías</h3>
                     <ul class="list-technologies">
                         <li>Expo</li>
                         <li>React Native</li>
@@ -197,7 +196,7 @@
                     </ul>
                 </div>
                 <div class="technologies">
-                    <h3>Tecnologías</h3>
+                    <h3 data-i18n="common.technologies">Tecnologías</h3>
                     <ul class="list-technologies">
                         <li>Python</li>
                         <li>BeautifulSoup</li>
@@ -207,8 +206,8 @@
                 </div>
                 <div class="project project-bot" data-project="5">
                     <div class="project-content">
-                        <h1>Bot de licitaciones</h1>
-                        <h3>Python + IA</h3>
+                        <h1 data-i18n="proj.bot">Bot de licitaciones</h1>
+                        <h3 data-i18n="proj.botStack">Python + IA</h3>
                         <ul class="project-tech">
                             <li>Python</li>
                             <li>BeautifulSoup</li>
@@ -228,10 +227,11 @@
                             <div class="arrow arrow-right">
                                 <i class="fas fa-arrow-right"></i>
                             </div>
-                            <img id="img-slider" src="./img/EquipoEmpresarial.jpg" alt="Imagen del proyecto">
+                            <img id="img-slider" src="./img/EquipoEmpresarial.jpg" alt="Imagen del proyecto"
+                                data-i18n-alt="slider.imgalt">
                             <section class="project-info">
-                                <h1 id="title-project">Titulo</h1>
-                                <p id="description-project">Descripcion</p>
+                                <h1 id="title-project" data-i18n="slider.title">Titulo</h1>
+                                <p id="description-project" data-i18n="slider.desc">Descripcion</p>
                                 <!-- Change for fa-arrow-up when click -->
                                 <div class="arrow arrow-up-down">
                                     <i class="fas fa-arrow-down"></i>
@@ -241,8 +241,8 @@
                     </div>
                     <div class="slider-actions">
                         <a id="link-project" class="but-info" href="#" target="_blank"
-                            rel="noopener noreferrer">Ver web</a>
-                        <button type="button" class="but-info close-project">Volver</button>
+                            rel="noopener noreferrer" data-i18n="slider.viewweb">Ver web</a>
+                        <button type="button" class="but-info close-project" data-i18n="common.back">Volver</button>
                     </div>
                 </div>
             </section>
@@ -250,11 +250,11 @@
             <section class="courses" id="cursos">
                 <!-- Here is the container -->
                 <div class="title-courses">
-                    <h1>Cursos</h1>
+                    <h1 data-i18n="courses.title">Cursos</h1>
                 </div>
                 <div class="study-centers">
                     <div class="study-center">
-                        <h3>Desarrollo &amp; Programación</h3>
+                        <h3 data-i18n="courses.dev">Desarrollo &amp; Programación</h3>
                         <div class="course" data-course="scriptcase">
                             <div class="course-technology">
                                 <h5>PHP &amp; Scriptcase</h5>
@@ -282,22 +282,22 @@
                     </div>
 
                     <div class="study-center">
-                        <h3>Marketing &amp; eCommerce</h3>
+                        <h3 data-i18n="courses.marketing">Marketing &amp; eCommerce</h3>
                         <div class="course" data-course="marketing">
                             <div class="course-technology">
-                                <h5>Marketing digital</h5>
+                                <h5 data-i18n="course.marketing">Marketing digital</h5>
                             </div>
                             <h3>...</h3>
                         </div>
                         <div class="course" data-course="analitica">
                             <div class="course-technology">
-                                <h5>Analítica web</h5>
+                                <h5 data-i18n="course.analytics">Analítica web</h5>
                             </div>
                             <h3>...</h3>
                         </div>
                         <div class="course" data-course="apps">
                             <div class="course-technology">
-                                <h5>Apps móviles</h5>
+                                <h5 data-i18n="course.apps">Apps móviles</h5>
                             </div>
                             <h3>...</h3>
                         </div>
@@ -320,7 +320,7 @@
                     </div>
 
                     <div class="study-center">
-                        <h3>Formación &amp; Idiomas</h3>
+                        <h3 data-i18n="courses.edu">Formación &amp; Idiomas</h3>
                         <div class="course" data-course="fp">
                             <div class="course-technology">
                                 <h5>FP Superior - DAM</h5>
@@ -329,29 +329,29 @@
                         </div>
                         <div class="course" data-course="idiomas">
                             <div class="course-technology">
-                                <h5>Idiomas</h5>
+                                <h5 data-i18n="course.languages">Idiomas</h5>
                             </div>
                             <h3>...</h3>
                         </div>
                     </div>
 
                     <div class="study-center">
-                        <h3>Experiencias extra</h3>
+                        <h3 data-i18n="courses.extra">Experiencias extra</h3>
                         <div class="course" data-course="poker">
                             <div class="course-technology">
-                                <h5>Poker profesional</h5>
+                                <h5 data-i18n="course.poker">Poker profesional</h5>
                             </div>
                             <h3>...</h3>
                         </div>
                         <div class="course" data-course="bolsa">
                             <div class="course-technology">
-                                <h5>Bolsa</h5>
+                                <h5 data-i18n="course.stock">Bolsa</h5>
                             </div>
                             <h3>...</h3>
                         </div>
                         <div class="course" data-course="crypto">
                             <div class="course-technology">
-                                <h5>Cryptoactivos</h5>
+                                <h5 data-i18n="course.crypto">Cryptoactivos</h5>
                             </div>
                             <h3>...</h3>
                         </div>
@@ -361,17 +361,17 @@
                 <!-- Courses popup -->
                 <div class="popup-courses-overlay">
                     <div class="popup-courses-content">
-                        <h2 id="course-popup-title">Cursos</h2>
+                        <h2 id="course-popup-title" data-i18n="courses.title">Cursos</h2>
                         <ul id="course-popup-list"></ul>
-                        <button type="button" class="close-courses but-info">Volver</button>
+                        <button type="button" class="close-courses but-info" data-i18n="common.back">Volver</button>
                     </div>
                 </div>
             </section>
 
             <section class="contact" id="contacto">
                 <div class="contact-content">
-                    <h1>Contacto</h1>
-                    <p>¿Tienes un proyecto o una idea? Hablemos.</p>
+                    <h1 data-i18n="contact.title">Contacto</h1>
+                    <p data-i18n="contact.text">¿Tienes un proyecto o una idea? Hablemos.</p>
                     <div class="contact-links">
                         <a class="but-info" href="https://github.com/JorgeMantinan" target="_blank"
                             rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
@@ -389,25 +389,28 @@
             </div>
             <div class="rrss-footer">
                 <a href="https://github.com/JorgeMantinan" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub de Jorge Mantiñán"><i class="fab fa-github"></i></a>
+                    aria-label="GitHub de Jorge Mantiñán" data-i18n-aria="aria.github"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/jorge-manti%C3%B1%C3%A1n-montero/" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn de Jorge Mantiñán"><i
+                    rel="noopener noreferrer" aria-label="LinkedIn de Jorge Mantiñán" data-i18n-aria="aria.linkedin"><i
                         class="fab fa-linkedin-in"></i></a>
             </div>
-            <div class="copy-footer"><i class="far fa-copyright"></i><span>Desarrollado por Jorge Mantiñán</span></div>
+            <div class="copy-footer"><i class="far fa-copyright"></i><span
+                    data-i18n="footer.by">Desarrollado por Jorge Mantiñán</span></div>
         </footer>
 
 
     </div>
 
     <!-- Back to top -->
-    <button id="go-top" type="button" class="but-info" aria-label="Volver al inicio">
+    <button id="go-top" type="button" class="but-info" aria-label="Volver al inicio" data-i18n-aria="aria.totop">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Boostrap 5.0 -->
     <script src="libs/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
 
+    <!-- i18n ES/EN (debe ir antes del slider y de los cursos) -->
+    <script src="./js/i18n.js"></script>
     <!-- Aboutme popup -->
     <script src="./js/aboutme.js"></script>
     <!-- Slider project -->

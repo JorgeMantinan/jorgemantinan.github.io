@@ -52,23 +52,98 @@ const coursesData = {
     ]
 };
 
-$(".course").on("click", function () {
-    const key = $(this).attr("data-course");
-    const items = coursesData[key];
-    if (!items) {
+const coursesDataEn = {
+    scriptcase: [
+        "Expert Scriptcase Course — PHP and JavaScript"
+    ],
+    bash: [
+        "Bash — Linux command interpreter"
+    ],
+    blockchain: [
+        "Smart Contract and Blockchain from A to Z (Udemy)"
+    ],
+    htmlcss: [
+        "Professional Web Design — The Complete Practical Course from Scratch (Udemy, WordPress)",
+        "Intro to web development course: HTML and CSS (Google)"
+    ],
+    marketing: [
+        "Basic Digital Marketing course (Google)",
+        "Digital marketing and Facebook Ads — managing my own campaigns"
+    ],
+    analitica: [
+        "Web analytics course (Google)"
+    ],
+    apps: [
+        "Mobile app development course (Google)"
+    ],
+    ecommerce: [
+        "Managing several ecommerce stores as owner on Shopify",
+        "Built 2 ecommerce sites in WordPress for freelancers"
+    ],
+    posgrado: [
+        "Postgraduate Diploma in Project Management — ENEB · Universidad Isabel I (graduated Cum Laude)"
+    ],
+    fp: [
+        "Higher Vocational Training — Multiplatform Application Development (DAM)"
+    ],
+    idiomas: [
+        "Spanish — native",
+        "Galician — native",
+        "English — B1 Certificate EF SET",
+        "German — basic proficiency (Duolingo level 23)",
+        "French — basic proficiency"
+    ],
+    poker: [
+        "Full-time professional poker player for 2 years",
+        "Probability, statistics, bankroll management and decision-making under uncertainty"
+    ],
+    bolsa: [
+        "Investing and trading in the stock market"
+    ],
+    crypto: [
+        "Familiar with the cryptoassets world",
+        "Smart contracts"
+    ]
+};
+
+/* Idioma actual (ES/EN) del módulo i18n; sin él se queda en español */
+const courseLang = () => (window.MantiI18n && window.MantiI18n.current()) || "es";
+
+/* Rellena el popup de un curso con el idioma activo */
+let lastCourseKey = null;
+const renderCoursePopup = (key) => {
+    const data = courseLang() === "en" && coursesDataEn[key] ? coursesDataEn[key] : coursesData[key];
+    if (!data) {
         return;
     }
 
-    const title = $(this).find(".course-technology h5").text();
+    /* El título sale del h5 de la píldora, ya traducido por i18n.js */
+    const title = $(`.course[data-course="${key}"] .course-technology h5`).text();
     $("#course-popup-title").text(title);
 
     const list = $("#course-popup-list");
     list.empty();
-    items.forEach((item) => {
+    data.forEach((item) => {
         list.append($("<li>").text(item));
     });
+};
 
+$(".course").on("click", function () {
+    const key = $(this).attr("data-course");
+    if (!coursesData[key]) {
+        return;
+    }
+    lastCourseKey = key;
+
+    renderCoursePopup(key);
     $(".popup-courses-overlay").addClass("active");
+});
+
+/* Al cambiar EN/ES con el popup abierto, la lista se redibuja en el nuevo idioma */
+document.addEventListener("langchange", function () {
+    if (lastCourseKey && $(".popup-courses-overlay").hasClass("active")) {
+        renderCoursePopup(lastCourseKey);
+    }
 });
 
 $(".close-courses").on("click", function () {

@@ -24,16 +24,23 @@ let project = [
     {
         img: projectImgs[0],
         title: "Web Personal",
+        titleEn: "Personal Website",
         description: "Mi portfolio personal. Empecé este sitio en 2021 a mano, sin frameworks ni IA: " +
             "solo HTML, CSS GRID, Sass, JavaScript y jQuery aprendidos de la documentación y vídeos. " +
             "En octubre de 2026 lo retomé para terminar lo que había dejado pendiente y mejorarlo " +
             "con IA: el commit d376721 marca el inicio de esa etapa. Sigue siendo una web estática, " +
             "sin más build que el compilador de Sass.",
+        descriptionEn: "My personal portfolio. I started this site by hand in 2021, with no frameworks " +
+            "and no AI: just HTML, CSS GRID, Sass, JavaScript and jQuery learned from the " +
+            "documentation and videos. In October 2026 I picked it up again to finish what I had " +
+            "left pending and improve it with AI: commit d376721 marks the start of that stage. " +
+            "It is still a static website, with no build step other than the Sass compiler.",
         url: ""
     },
     {
         img: projectImgs[1],
         title: "Proyectos para empresas",
+        titleEn: "Projects for companies",
         description: "Realicé las prácticas de formación trabajando para una pyme llamada aCore, donde " +
             "me formaron y trabajé activamente en implementaciones de automatización de pruebas " +
             "Java con las librerías JUnit, Mockito y Selenium. " +
@@ -46,11 +53,24 @@ let project = [
             "también con PostgreSQL para nutrir a ambas aplicaciones. " +
             'Más información en <a href="https://www.linkedin.com/in/jorge-manti%C3%B1%C3%A1n-montero/" ' +
             'target="_blank" rel="noopener noreferrer">mi perfil de LinkedIn</a>.',
+        descriptionEn: "I did my training internship at a small company called aCore, where they " +
+            "trained me and I actively worked on Java test automation implementations with the " +
+            "JUnit, Mockito and Selenium libraries. " +
+            "I wanted to keep learning about fullstack development and started working at Atos " +
+            "as a fullstack developer using Java Spring Boot + Angular + MySQL, carrying out " +
+            "multiple implementations, among them user management with OAuth2, exception " +
+            "handling, automated PDF generation, etc. " +
+            "Later I was hired by Minsait, where I worked with PHP on the existing website while " +
+            "building other services in Angular and Node.js, using and creating features with " +
+            "PostgreSQL as well to feed both applications. " +
+            'More info on <a href="https://www.linkedin.com/in/jorge-manti%C3%B1%C3%A1n-montero/" ' +
+            'target="_blank" rel="noopener noreferrer">my LinkedIn profile</a>.',
         url: ""
     },
     {
         img: projectImgs[2],
         title: "MantiRenfe",
+        titleEn: "MantiRenfe",
         description: "Vigila las plazas libres de tus trenes y te avisa en cuanto se libera una: " +
             "mapa en tiempo real, cuenta atrás a tu salida y avisos según tu bono. " +
             "Instalable como app en Android e iPhone (PWA).<br><br>" +
@@ -65,30 +85,76 @@ let project = [
             "Actualmente tarda en iniciar el servidor backend donde está desplegado porque " +
             "no estoy obteniendo ingresos para mantenerlo 24/7 levantado, pero está " +
             "completamente funcional.",
+        descriptionEn: "Watches the free seats on your trains and notifies you as soon as one is " +
+            "released: real-time map, countdown to your departure and alerts based on your pass. " +
+            "Installable as an app on Android and iPhone (PWA).<br><br>" +
+            "Built with React + TypeScript (Vite, Tailwind and a Leaflet map) on the frontend, " +
+            "NestJS with Prisma and PostgreSQL for the API, BullMQ queues on Redis and a worker " +
+            "that polls Renfe's official feeds (GTFS and GTFS-RT), authentication with Supabase, " +
+            "push notifications and a mobile app in Expo/React Native.<br><br>" +
+            "Wanting to practice programming with AI, a month before the Urda accident and " +
+            "coming back from a trip with my brother in the car, he told me that his partner " +
+            "couldn't find a way for Renfe to notify her when a seat was released. " +
+            "The next day I started on this project and it did the job for her.<br><br>" +
+            "Right now the backend server where it is deployed takes a while to start because " +
+            "I am not earning income to keep it up 24/7, but it is fully functional.",
         url: "https://mantirenfe.vercel.app"
     },
     {
         img: projectImgs[3],
         title: "MantiGestor",
+        titleEn: "MantiGestor",
         description: "Gestión para autónomos con IA: fotografía facturas, controla tu IVA e IRPF, " +
             "prepara la declaración de la renta y gestiona tu negocio en un solo lugar.",
+        descriptionEn: "Bookkeeping for freelancers with AI: photograph your invoices, track your " +
+            "VAT and income tax, prepare your income tax return and manage your business in one " +
+            "place.",
         url: "https://mantigestor.vercel.app"
     },
     {
         img: projectImgs[4],
         title: "MantiTwitch",
+        titleEn: "MantiTwitch",
         description: "Suite de interacción para Twitch: sorteos y dinámicas con el chat de tu canal, " +
             "con perfiles de usuario, moderador y streamer.",
+        descriptionEn: "Interaction suite for Twitch: giveaways and dynamics with your channel's " +
+            "chat, with user, moderator and streamer profiles.",
         url: "https://manti-twitch.vercel.app"
     },
     {
         img: projectImgs[5],
         title: "Bot de licitaciones",
+        titleEn: "Tender bot",
         description: "Bot en Python creado con IA que obtiene licitaciones públicas de forma " +
             "automatizada para no perderse ninguna oportunidad.",
+        descriptionEn: "Python bot built with AI that automatically fetches public tenders so no " +
+            "opportunity is missed.",
         url: ""
     }
 ];
+
+/* Idioma actual (ES/EN) del módulo i18n; sin él se queda en español */
+var projectLang = function () {
+    return (window.MantiI18n && window.MantiI18n.current()) || "es";
+};
+
+var projectTitle = function (i) {
+    var p = project[i];
+    return projectLang() === "en" && p.titleEn ? p.titleEn : p.title;
+};
+
+var projectDescription = function (i) {
+    var p = project[i];
+    return projectLang() === "en" && p.descriptionEn ? p.descriptionEn : p.description;
+};
+
+/* Redibuja la info del slider si está abierto (al pulsar EN/ES) */
+document.addEventListener("langchange", function () {
+    if ($(".slidershow-project").hasClass("active") && indexProject !== undefined) {
+        $("#title-project").text(projectTitle(indexProject));
+        $("#description-project").html(projectDescription(indexProject));
+    }
+});
 
 let indexImg = 0;
 let indexProject;
@@ -108,8 +174,8 @@ $(".project").on("click", function () {
     /* Count the images of project */
     countImgs = countImgsProject();
 
-    $("#title-project").text(project[indexProject].title);
-    $("#description-project").html(project[indexProject].description);
+    $("#title-project").text(projectTitle(indexProject));
+    $("#description-project").html(projectDescription(indexProject));
 
     indexImg = 0;
     $("#img-slider").attr('src', project[indexProject].img[indexImg]);

@@ -61,9 +61,33 @@ parcial redeclara la paleta):
 @import "../sass/footer.scss";
 @import "../sass/aboutme.scss";      // popup "Sobre mí"
 @import "../sass/slider-project.scss";// slider de proyectos
+@import "../sass/cookies.scss";      // aviso de cookies (cookies.html)
+@import "../sass/popup-courses.scss";// popup de cursos
 ```
 
 Breakpoints (siempre `max-width`): 1200 / 1024 / 768 (menú hamburguesa) / 600.
+
+## Internacionalización ES/EN
+
+La web tiene dos idiomas (solo ES y EN) con un botón `#lang-toggle` (clase `.but-info`)
+dentro de `.menu_links` —en `cookies.html` va en `.cookies-head`— que enseña el idioma
+al que se cambia («EN» estando en ES). Todo el mecanismo está en **`js/i18n.js`**
+(vanilla, sin jQuery; también se carga en `cookies.html`):
+
+- La elección se guarda en `localStorage` (`manti-lang`); sin nada guardado se respeta
+  el idioma del navegador (`en-*` → EN, resto → ES). Expone `window.MantiI18n`
+  (`current()`, `t()`, `setLang()`).
+- Diccionario `DICT` con claves `{ es, en }`. En el HTML se etiqueta el texto:
+  `data-i18n` (textContent), `data-i18n-html` (innerHTML, textos con `<br>` o
+  `<strong>`), `data-i18n-aria` / `data-i18n-alt` (atributos) y `<html data-i18n-doc>`
+  para el `<title>`.
+- El contenido que genera JS lleva sus dos versiones en sus propios ficheros:
+  `slider-project.js` (`titleEn` / `descriptionEn`) y `courses.js` (`coursesDataEn`).
+  Ambos escuchan el evento nativo **`langchange`** y redibujan si su popup está abierto.
+- El botón y el menú móvil llevan `z-index: 110` (los popups son `100`) para poder
+  cambiar de idioma con un popup abierto.
+- **Al añadir texto nuevo**: mete la clave en `DICT` y la etiqueta en el HTML, o añade
+  el campo `…En` en los arrays de JS. Si se olvida, el texto se queda en español.
 
 ## Peligros conocidos (leer antes de tocar)
 
@@ -84,6 +108,10 @@ Breakpoints (siempre `max-width`): 1200 / 1024 / 768 (menú hamburguesa) / 600.
    ahí + la píldora en `index.html`). El hover de 3 puntos de `.course` usa un
    `<h3>...</h3>` invisible (`color: rgba(255,255,255,0)` → `1` en `:hover`).
 4. `libs/bootstrap-5.0.2/` es vendor copiado; no editar.
+5. **Scroll horizontal a ~1200-1400px de ancho**: las tarjetas `.project` miden
+   `60vw` con `margin-right: 50px` y desbordan ~8px el documento (también en la web
+   publicada; es previo a los cambios de i18n). Si aparece en una verificación,
+   comprobar antes si es esto y no un cambio nuevo.
 
 ## Verificación antes de cada commit
 
