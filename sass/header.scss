@@ -40,6 +40,18 @@ $text: #FFF0F0;
             display: block;
             text-decoration: none;
         }
+        /* Botón EN/ES: mismo estilo .but-info pero más compacto en la barra.
+           z-index por encima de los popups (100) para poder cambiar de idioma
+           aunque haya un proyecto o un curso abierto */
+        .lang-item #lang-toggle {
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            font-weight: 400;
+            position: relative;
+            z-index: 110;
+        }
 }
 
 ul.show {
@@ -172,7 +184,7 @@ ul.show {
         align-self: center;
         justify-self: flex-end;
         margin-right: 50px;
-        z-index: 6;
+        z-index: 110;
     }
     .menu_links {
         position: fixed;
@@ -191,7 +203,9 @@ ul.show {
                 background: none;
             }
         }
-        z-index: 5;
+        /* Por encima de los popups (100) y del botón #go-top (90) para que el
+           EN/ES siga accesible con un popup abierto */
+        z-index: 110;
     }
 }
 
