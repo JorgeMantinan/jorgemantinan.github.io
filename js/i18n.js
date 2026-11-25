@@ -56,6 +56,13 @@
         "proj.botStack": { es: "Python + IA", en: "Python + AI" },
         "tech.ai": { es: "IA", en: "AI" },
 
+        /* Etiquetas de estado y despliegue de las tarjetas */
+        "badge.done": { es: "Terminada", en: "Completed" },
+        "badge.testing": { es: "En pruebas", en: "Testing" },
+        "badge.progress": { es: "En proceso", en: "In progress" },
+        "badge.online": { es: "Online", en: "Online" },
+        "badge.local": { es: "En local", en: "Local" },
+
         /* Slider de proyectos */
         "slider.title": { es: "Titulo", en: "Title" },
         "slider.desc": { es: "Descripcion", en: "Description" },

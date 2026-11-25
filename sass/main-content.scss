@@ -39,6 +39,53 @@ $text: #fff0f0;
     justify-self: center;
 }
 
+/* Etiquetas de cada tarjeta: estado (Terminada / En pruebas / En proceso) y
+   despliegue (Online / En local). Mismo estilo que los botones .but-info
+   (Montserrat, radio 0.25rem, fondo casi transparente) pero con el color del
+   estado en el borde y el texto. Verde y azul son colores nuevos, propios de
+   estas etiquetas; el rojo es el acento de la paleta. */
+$badge-green: #22c55e;
+$badge-blue: #3b82f6;
+
+.project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    color: $text;
+    background-color: rgba(0, 0, 0, 0.55);
+    border: 1px solid $third-color;
+    border-radius: 0.25rem;
+    font-family: "Montserrat", inherit;
+    font-weight: 400;
+    font-size: calc(7px + 0.45vw);
+    line-height: 1.4;
+    text-align: center;
+    white-space: nowrap;
+
+    /* Terminada y Online en verde; En pruebas y En local en azul;
+       En proceso en el rojo de la paleta */
+    &.badge-done,
+    &.badge-online {
+        color: $badge-green;
+        border-color: $badge-green;
+    }
+    &.badge-testing,
+    &.badge-local {
+        color: $badge-blue;
+        border-color: $badge-blue;
+    }
+    &.badge-progress {
+        color: $secondary-color;
+        border-color: $secondary-color;
+    }
+}
+
 .project {
     margin-right: 50px;
     width: 60vw;
