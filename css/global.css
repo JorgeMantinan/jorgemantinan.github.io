@@ -314,11 +314,32 @@ ul.show {
 .project.project-bot:before {
   background-image: url("../img/CodigoProgramacion.jpg");
 }
+.project.project-vecinos:before {
+  background-image: url("../img/project-mantivecinos.png");
+}
+.project.project-english:before {
+  background-image: url("../img/project-mantienglish.png");
+}
+.project.project-designed:before {
+  background-image: url("../img/project-designed.png");
+}
+.project.project-insta:before {
+  background-image: url("../img/project-insta.png");
+}
+.project.project-karaoke:before {
+  background-image: url("../img/project-karaoke.png");
+}
+.project.project-inmobiliaria:before {
+  background-image: url("../img/project-inmobiliaria.png");
+}
+.project.project-judicial:before {
+  background-image: url("../img/project-mantijudicial.png");
+}
 .project {
   /* Screenshots with a light background need a darker base so the
      off-white title stays readable (hover rule below still wins) */
 }
-.project.project-renfe:before, .project.project-gestor:before, .project.project-twitch:before {
+.project.project-renfe:before, .project.project-gestor:before, .project.project-twitch:before, .project.project-vecinos:before, .project.project-designed:before, .project.project-inmobiliaria:before, .project.project-judicial:before {
   filter: brightness(40%);
 }
 .project:hover:before, .project:focus:before {
@@ -649,6 +670,27 @@ ul.show {
   }
   .project.project-bot:before {
     background-image: url("../img/movil-bot.png");
+  }
+  .project.project-vecinos:before {
+    background-image: url("../img/movil-vecinos.png");
+  }
+  .project.project-english:before {
+    background-image: url("../img/movil-english.png");
+  }
+  .project.project-designed:before {
+    background-image: url("../img/movil-designed.png");
+  }
+  .project.project-insta:before {
+    background-image: url("../img/movil-insta.png");
+  }
+  .project.project-karaoke:before {
+    background-image: url("../img/movil-karaoke.png");
+  }
+  .project.project-inmobiliaria:before {
+    background-image: url("../img/movil-inmobiliaria.png");
+  }
+  .project.project-judicial:before {
+    background-image: url("../img/movil-judicial.png");
   }
 }
 /* Ipad Screen */
