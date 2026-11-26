@@ -56,6 +56,15 @@
         "proj.botStack": { es: "Python + IA", en: "Python + AI" },
         "tech.ai": { es: "IA", en: "AI" },
 
+        /* Subtítulos de las 7 tarjetas nuevas */
+        "proj.vecinos": { es: "Plataforma SaaS multi-comunidad", en: "Multi-community SaaS platform" },
+        "proj.english": { es: "App de inglés para programadores", en: "English app for programmers" },
+        "proj.designed": { es: "Constructor visual de webs", en: "Visual web builder" },
+        "proj.insta": { es: "Analizador de Instagram", en: "Instagram analyser" },
+        "proj.karaoke": { es: "Karaoke en directo para Twitch", en: "Live karaoke for Twitch" },
+        "proj.inmobiliaria": { es: "Portal inmobiliario", en: "Real estate portal" },
+        "proj.judicial": { es: "Jurisprudencia con IA", en: "Case law with AI" },
+
         /* Etiquetas de estado y despliegue de las tarjetas */
         "badge.done": { es: "Terminada", en: "Completed" },
         "badge.testing": { es: "En pruebas", en: "Testing" },

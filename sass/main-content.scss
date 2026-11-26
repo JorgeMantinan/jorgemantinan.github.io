@@ -141,11 +141,50 @@ $badge-blue: #3b82f6;
             background-image: url("../img/CodigoProgramacion.jpg");
         }
     }
+    &.project-vecinos {
+        &:before {
+            background-image: url("../img/project-mantivecinos.png");
+        }
+    }
+    &.project-english {
+        &:before {
+            background-image: url("../img/project-mantienglish.png");
+        }
+    }
+    &.project-designed {
+        &:before {
+            background-image: url("../img/project-designed.png");
+        }
+    }
+    &.project-insta {
+        &:before {
+            background-image: url("../img/project-insta.png");
+        }
+    }
+    &.project-karaoke {
+        &:before {
+            background-image: url("../img/project-karaoke.png");
+        }
+    }
+    &.project-inmobiliaria {
+        &:before {
+            background-image: url("../img/project-inmobiliaria.png");
+        }
+    }
+    &.project-judicial {
+        &:before {
+            background-image: url("../img/project-mantijudicial.png");
+        }
+    }
     /* Screenshots with a light background need a darker base so the
        off-white title stays readable (hover rule below still wins) */
     &.project-renfe,
     &.project-gestor,
-    &.project-twitch {
+    &.project-twitch,
+    &.project-vecinos,
+    &.project-designed,
+    &.project-inmobiliaria,
+    &.project-judicial {
         &:before {
             filter: brightness(40%);
         }
@@ -505,6 +544,27 @@ $badge-blue: #3b82f6;
     }
     .project.project-bot:before {
         background-image: url("../img/movil-bot.png");
+    }
+    .project.project-vecinos:before {
+        background-image: url("../img/movil-vecinos.png");
+    }
+    .project.project-english:before {
+        background-image: url("../img/movil-english.png");
+    }
+    .project.project-designed:before {
+        background-image: url("../img/movil-designed.png");
+    }
+    .project.project-insta:before {
+        background-image: url("../img/movil-insta.png");
+    }
+    .project.project-karaoke:before {
+        background-image: url("../img/movil-karaoke.png");
+    }
+    .project.project-inmobiliaria:before {
+        background-image: url("../img/movil-inmobiliaria.png");
+    }
+    .project.project-judicial:before {
+        background-image: url("../img/movil-judicial.png");
     }
 
 }
