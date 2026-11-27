@@ -128,10 +128,12 @@ let project = [
         img: projectImgs[4],
         title: "MantiTwitch",
         titleEn: "MantiTwitch",
-        description: "Suite de interacción para Twitch: sorteos y dinámicas con el chat de tu canal, " +
-            "con perfiles de usuario, moderador y streamer.",
-        descriptionEn: "Interaction suite for Twitch: giveaways and dynamics with your channel's " +
-            "chat, with user, moderator and streamer profiles.",
+        description: "Interactúa con tu comunidad de Twitch desde el chat para hacer sorteos " +
+            "o minijuegos, como la ruleta o el ahorcado. También puedes ver tu lista de " +
+            "seguidores y suscriptores, sabiendo a quiénes sigues que no te siguen.",
+        descriptionEn: "Interact with your Twitch community from the chat to run giveaways " +
+            "or mini-games, such as the roulette or hangman. You can also see your follower and " +
+            "subscriber lists, knowing which of the accounts you follow do not follow you back.",
         url: "https://manti-twitch.vercel.app"
     },
     {
