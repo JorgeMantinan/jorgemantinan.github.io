@@ -163,30 +163,20 @@ let project = [
         img: projectImgs[7],
         title: "English Coach",
         titleEn: "English Coach",
-        description: "App de inglés para programadores hispanohablantes que buscan trabajo en " +
-            "EE. UU.: más de 845 ejercicios en 14 módulos (gramática, phrasal verbs, vocabulario " +
+        description: "App para aprender inglés americano enfocada en programadores. " +
+            "Más de 845 ejercicios en 14 módulos (gramática, phrasal verbs, vocabulario " +
             "tech, false friends, idioms, business email, listening, entrevistas, pronunciación) " +
-            "con estilo Duolingo: XP, rachas y repetición espaciada. Cada respuesta se explica en " +
-            "inglés y español, todos los elementos tienen botón 🔊 (Web Speech API) y traducción " +
-            "on-demand 🌐.<br><br>" +
+            "con XP, rachas y repetición espaciada. Cada respuesta se explica en " +
+            "inglés y español y todos los elementos tienen botón 🔊.<br><br>" +
             "Incluye diccionario navegable, exámenes cronometrados con certificados, test de nivel " +
-            "CEFR (A2–C1), Smart Review de puntos débiles, modo oscuro y atajos de teclado. El " +
-            "progreso se sincroniza en la nube con un GitHub Gist privado: gratis, sin servidor ni " +
-            "base de datos, entre el móvil y el PC.<br><br>" +
-            "100% HTML + CSS + JavaScript puros, sin frameworks ni build. Despliegue automático en " +
-            "Vercel con cada push a master.",
-        descriptionEn: "English app for Spanish-speaking programmers looking for a job in the US: " +
+            "CEFR (A2–C1), Smart Review de puntos débiles, modo oscuro y atajos de teclado.",
+        descriptionEn: "App to learn American English aimed at programmers. " +
             "845+ exercises across 14 modules (grammar, phrasal verbs, tech vocabulary, false " +
-            "friends, idioms, business email, listening, interviews, pronunciation) with a " +
-            "Duolingo-style XP, streaks and spaced repetition. Every answer is explained in " +
-            "English and Spanish, every element has a 🔊 button (Web Speech API) and on-demand " +
-            "🌐 translation.<br><br>" +
+            "friends, idioms, business email, listening, interviews, pronunciation) " +
+            "with XP, streaks and spaced repetition. Every answer is explained in " +
+            "English and Spanish and every element has a 🔊 button.<br><br>" +
             "Includes a browsable dictionary, timed exams with certificates, a CEFR level test " +
-            "(A2–C1), Smart Review of weak spots, dark mode and keyboard shortcuts. Progress " +
-            "syncs to the cloud through a private GitHub Gist: free, with no server or database, " +
-            "between your phone and your PC.<br><br>" +
-            "100% plain HTML + CSS + JavaScript, no frameworks and no build step. Automatic " +
-            "deploys on Vercel with every push to master.",
+            "(A2–C1), Smart Review of weak spots, dark mode and keyboard shortcuts.",
         url: "https://mantienglish.vercel.app"
     },
     {
