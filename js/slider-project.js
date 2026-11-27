@@ -112,11 +112,16 @@ let project = [
         img: projectImgs[3],
         title: "MantiGestor",
         titleEn: "MantiGestor",
-        description: "Gestión para autónomos con IA: fotografía facturas, controla tu IVA e IRPF, " +
-            "prepara la declaración de la renta y gestiona tu negocio en un solo lugar.",
-        descriptionEn: "Bookkeeping for freelancers with AI: photograph your invoices, track your " +
-            "VAT and income tax, prepare your income tax return and manage your business in one " +
-            "place.",
+        description: "Gestiona tus facturas, nóminas, alquileres y pagos. " +
+            "Genera automáticamente la declaración de la renta, las declaraciones trimestrales " +
+            "y los modelos a entregar, calcula el IVA y obtén avisos de cuándo son los próximos " +
+            "plazos para entregar los informes al Estado español.<br><br>" +
+            "Úsala tú mismo o permite a un tercero gestionar tu panel.",
+        descriptionEn: "Manage your invoices, payslips, rentals and payments. " +
+            "Automatically generate your income tax return, quarterly declarations and the " +
+            "forms to be filed, calculate VAT and get reminders of the upcoming deadlines for " +
+            "submitting reports to the Spanish tax authorities.<br><br>" +
+            "Use it yourself or let someone else manage your dashboard.",
         url: "https://mantigestor.vercel.app"
     },
     {
