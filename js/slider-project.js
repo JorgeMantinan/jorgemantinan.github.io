@@ -128,10 +128,12 @@ let project = [
         img: projectImgs[4],
         title: "MantiTwitch",
         titleEn: "MantiTwitch",
-        description: "Suite de interacción para Twitch: sorteos y dinámicas con el chat de tu canal, " +
-            "con perfiles de usuario, moderador y streamer.",
-        descriptionEn: "Interaction suite for Twitch: giveaways and dynamics with your channel's " +
-            "chat, with user, moderator and streamer profiles.",
+        description: "Interactúa con tu comunidad de Twitch desde el chat para hacer sorteos " +
+            "o minijuegos, como la ruleta o el ahorcado. También puedes ver tu lista de " +
+            "seguidores y suscriptores, sabiendo a quiénes sigues que no te siguen.",
+        descriptionEn: "Interact with your Twitch community from the chat to run giveaways " +
+            "or mini-games, such as the roulette or hangman. You can also see your follower and " +
+            "subscriber lists, knowing which of the accounts you follow do not follow you back.",
         url: "https://manti-twitch.vercel.app"
     },
     {
@@ -150,27 +152,11 @@ let project = [
         titleEn: "MantiVecinos",
         description: "SaaS multi-comunidad de fincas para vecinos, presidentes y administradores: " +
             "información de la comunidad, economía, reuniones con asistencia, incidencias, " +
-            "documentación, invitaciones y profesionales, todo aislado por comunidad.<br><br>" +
-            "Monorepo con pnpm workspaces: React 19 + TypeScript + Vite + Tailwind + TanStack Query " +
-            "en el frontend, API Hono con Better Auth (sesiones por correo) y Drizzle ORM sobre " +
-            "PostgreSQL (Neon en producción, PGlite en local), emails con Resend y ficheros en " +
-            "Vercel Blob. Contratos Zod compartidos entre web y API, migraciones, seeds y " +
-            "copias de seguridad como comandos del propio monorepo, tests con Vitest y " +
-            "Playwright y CI con GitHub Actions.<br><br>" +
-            "Diseñado con ADRs versionados y roadmap por fases: la fase actual es la preparación " +
-            "para producción (copias de seguridad, retención y métricas de cuota).",
+            "documentación, invitaciones y profesionales, todo aislado por comunidad.",
         descriptionEn: "Multi-community SaaS for apartment buildings, aimed at neighbours, " +
             "presidents and administrators: community information, finances, meetings with " +
             "attendance, incidents, documentation, invitations and service providers, all " +
-            "isolated per community.<br><br>" +
-            "pnpm workspaces monorepo: React 19 + TypeScript + Vite + Tailwind + TanStack Query " +
-            "on the frontend, an Hono API with Better Auth (email sessions) and Drizzle ORM over " +
-            "PostgreSQL (Neon in production, PGlite locally), emails with Resend and file storage " +
-            "on Vercel Blob. Zod contracts shared between web and API, migrations, seeds and " +
-            "backups as commands of the monorepo itself, Vitest and Playwright tests and " +
-            "GitHub Actions CI.<br><br>" +
-            "Designed with versioned ADRs and a phased roadmap: the current phase is preparation " +
-            "for production (backups, retention and quota metrics).",
+            "isolated per community.",
         url: "https://mantivecinos.vercel.app"
     },
     {
